@@ -13,11 +13,13 @@ const menuIsOpen = ref(false)
     <button
   aria-controls="mainNav"
   aria-expanded="true"
-  class="rounded-full border-2 border-red-600 bg-red-300 px-2">
+  class="rounded-full border-2 border-red-600 bg-red-300 px-2"
+  @pointerdown="menuIsOpen = !menuIsOpen"
+  >
   
   menu
 </button>
-<nav id="mainNav">
+<nav id="mainNav" v-show="menuIsOpen">
   <ul>
     <li><a href="#">item 1</a></li>
     <li><a href="#">item 2</a></li>
@@ -25,6 +27,7 @@ const menuIsOpen = ref(false)
   </ul>
 </nav>
   </header>
+
   <RouterView v-slot="{ Component }">
     <Suspense>
       <component :is="Component" />
