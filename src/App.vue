@@ -24,9 +24,8 @@ const menuIsOpen = ref(false)
   leave-active-class="-translate-x-full">
 <nav id="mainNav" v-show="menuIsOpen">
   <ul>
-    <li><a href="#">item 1</a></li>
-    <li><a href="#">item 2</a></li>
-    <li><a href="#">item 3</a></li>
+    <li><RouterLink to="/accordeon1">Accordeon 1</RouterLink></li>
+    <li><RouterLink to="/accordeon2">Accordeon 2</RouterLink></li>
   </ul>
 </nav>
 </Transition>
